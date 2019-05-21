@@ -21,6 +21,20 @@ class _AuthenState extends State<Authen> {
     );
   }
 
+  Widget showRegister() {
+    return RaisedButton(
+      child: Text('Register'),
+      onPressed: () {},
+    );
+  }
+
+  Widget showLogIn() {
+    return RaisedButton(
+      child: Text('Log In'),
+      onPressed: () {},
+    );
+  }
+
   Widget showLogo() {
     return Image.asset('img/logo.png');
   }
@@ -35,18 +49,36 @@ class _AuthenState extends State<Authen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(resizeToAvoidBottomPadding: false, //แก้คีบอร์ดให้แสดงผลเต็มจอ ไม่error
         //คำสั่งปรับแต่งที่หน้าจอ
         body: Container(
-      margin: EdgeInsets.only(top: 70.0), //จากบนลงมา 70 พ้อย
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.white10, Colors.orange[50]], begin: Alignment(-1, -1))),
+      padding: EdgeInsets.only(top: 70.0), //จากบนลงมา 70 พ้อย
       alignment: Alignment(0, -1), //ปรับค่าตำแหน่งหน้าจอ
       child: Column(
         children: <Widget>[
           showLogo(),
           Container(margin: EdgeInsets.only(top: 25.0), child: showTitle()),
-          Container(margin: EdgeInsets.only(left: 50.0, right: 50.0), child: showUser(),
+          Container(
+            margin: EdgeInsets.only(left: 50.0, right: 50.0),
+            child: showUser(),
           ),
-          Container(margin: EdgeInsets.only(left: 50.0, right: 50.0), child: showPW(),
+          Container(
+            margin: EdgeInsets.only(left: 50.0, right: 50.0),
+            child: showPW(),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 50.0, right: 50.0), //ปรับตำแหน่งปุ่ม
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: showLogIn(),
+                ),
+                showRegister()
+              ], //แสดงปุ่ม login กับ register ติดกัน
+            ),
           )
         ],
       ), //ดึงชื่อ widget ที่สร้างด้านบนมาแสดง
