@@ -59,25 +59,25 @@ class _AuthenState extends State<Authen> {
       alignment: Alignment(0, -1), //ปรับค่าตำแหน่งหน้าจอ
       child: Column(
         children: <Widget>[
-          showLogo(),
+          showLogo(), //แสดงภาพ Logo
           Container(margin: EdgeInsets.only(top: 25.0), child: showTitle()),
           Container(
             margin: EdgeInsets.only(left: 50.0, right: 50.0),
-            child: showUser(),
+            child: showUser(), //แสดงช่อง user
           ),
           Container(
             margin: EdgeInsets.only(left: 50.0, right: 50.0),
-            child: showPW(),
+            child: showPW(), //แสดงช่อง Password
           ),
           Container(
             margin: EdgeInsets.only(left: 50.0, right: 50.0), //ปรับตำแหน่งปุ่ม
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: showLogIn(),
+                  child: showLogIn(), //แสดงปุ่ม login กับ register ติดกัน
                 ),
                 showRegister()
-              ], //แสดงปุ่ม login กับ register ติดกัน
+              ], 
             ),
           )
         ],
