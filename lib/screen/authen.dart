@@ -8,6 +8,19 @@ class Authen extends StatefulWidget {
 }
 
 class _AuthenState extends State<Authen> {
+  Widget showUser() {
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'User :', hintText: 'Your User'),
+    );
+  }
+
+  Widget showPW() {
+    return TextFormField(
+      decoration: InputDecoration(
+          labelText: 'Password :', hintText: 'More 6 Charactor'),
+    );
+  }
+
   Widget showLogo() {
     return Image.asset('img/logo.png');
   }
@@ -30,9 +43,11 @@ class _AuthenState extends State<Authen> {
       child: Column(
         children: <Widget>[
           showLogo(),
-          Container(margin: EdgeInsets.only(top: 25.0),
-            child: showTitle()
+          Container(margin: EdgeInsets.only(top: 25.0), child: showTitle()),
+          Container(margin: EdgeInsets.only(left: 50.0, right: 50.0), child: showUser(),
           ),
+          Container(margin: EdgeInsets.only(left: 50.0, right: 50.0), child: showPW(),
+          )
         ],
       ), //ดึงชื่อ widget ที่สร้างด้านบนมาแสดง
     ));
