@@ -14,7 +14,7 @@ class _RegisterState extends State<Register> {
   final getFormKey =
       GlobalKey<FormState>(); //รับค่าจากการพิมพ์ช่อง text ทั้งหมดที่สร้างไว้
 
-  String name, user, pw; //สร้างตัวแปรแบบ string
+  String Name, User, Password; //สร้างตัวแปรแบบ string
 
   Widget registerButton() {
     return IconButton(
@@ -24,7 +24,7 @@ class _RegisterState extends State<Register> {
         //onPressed = เมื่อมีการกดปุ่ม
         if (getFormKey.currentState.validate()) {
           getFormKey.currentState.save(); //บันทึกค่าที่รับจากแป้นพิมพ์
-          print('name = $name, user=$user, Password = $pw');
+          print('Name = $Name, User=$User, Password = $Password');
           uploadValtoserv();
         }
       },
@@ -51,7 +51,7 @@ class _RegisterState extends State<Register> {
           }
         },
         onSaved: (String namedata) {
-          name = namedata;
+          Name = namedata;
         });
   }
 
@@ -67,7 +67,7 @@ class _RegisterState extends State<Register> {
         }
       },
       onSaved: (String userData) { //บันทึกค่า จากตัวแปรด้านบน = ตัวแปรที่สร้าง String
-        user = userData;
+        User = userData;
       },
     );
   }
@@ -82,7 +82,7 @@ class _RegisterState extends State<Register> {
         }
       },
       onSaved: (String pwData) {
-        pw = pwData;
+        Password = pwData;
       },
     );
   }
